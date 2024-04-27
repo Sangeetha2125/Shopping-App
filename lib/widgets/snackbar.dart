@@ -8,7 +8,7 @@ void customSnackBar(BuildContext context, Color color, String message) {
       content: Text(
         message,
         style: const TextStyle(
-          fontSize: 18,
+          fontSize: 15,
         ),
       ),
     ),

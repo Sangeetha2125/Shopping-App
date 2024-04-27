@@ -21,9 +21,9 @@ class _LayoutPageState extends State<LayoutPage> {
         title: const Text(
           "Shoes Collection",
           style: TextStyle(
-            color: darkBlue,
+            color: CustomColors.darkBlue,
             fontWeight: FontWeight.bold,
-            fontSize: 26,
+            fontSize: 24,
           ),
         ),
         actions: [
@@ -35,7 +35,10 @@ class _LayoutPageState extends State<LayoutPage> {
           ),
         ],
       ),
-      body: pages[selectedPage],
+      body: IndexedStack(
+        index: selectedPage,
+        children: pages,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedPage,
         onTap: (value) {

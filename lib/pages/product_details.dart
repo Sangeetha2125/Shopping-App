@@ -28,12 +28,13 @@ class _ProductDetailsState extends State<ProductDetails> {
           "company": widget.product["company"],
           "size": selectedSize,
         });
-        customSnackBar(context, darkGreen, "Product added successfully");
+        customSnackBar(
+            context, CustomColors.darkGreen, "Product added successfully");
       } else {
-        customSnackBar(context, darkRed, "Product is already added");
+        customSnackBar(context, CustomColors.darkRed, "Product already added");
       }
     } else {
-      customSnackBar(context, darkRed, "Please select a size");
+      customSnackBar(context, CustomColors.darkRed, "Please select a size");
     }
   }
 
@@ -50,9 +51,9 @@ class _ProductDetailsState extends State<ProductDetails> {
         title: Text(
           widget.product['title'] as String,
           style: const TextStyle(
-            color: darkBlue,
+            color: CustomColors.darkBlue,
             fontWeight: FontWeight.bold,
-            fontSize: 26,
+            fontSize: 24,
           ),
         ),
       ),
@@ -60,8 +61,9 @@ class _ProductDetailsState extends State<ProductDetails> {
         children: [
           const Spacer(),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(20.0),
             child: Image(
+              height: 250,
               image: AssetImage(widget.product['imageUrl'] as String),
             ),
           ),
@@ -70,7 +72,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             alignment: Alignment.topLeft,
             height: 225,
             padding: const EdgeInsets.all(24),
-            decoration: const BoxDecoration(color: lighterBlue),
+            decoration: const BoxDecoration(color: CustomColors.lighterBlue),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -78,7 +80,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   "₹${widget.product['price']}",
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 28,
+                    fontSize: 26,
                   ),
                 ),
                 SingleChildScrollView(
@@ -88,7 +90,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       for (int i = 0; i < (widget.product['sizes']).length; i++)
                         Padding(
                           padding: const EdgeInsets.only(
-                            right: 12,
+                            right: 10,
                             top: 8,
                           ),
                           child: GestureDetector(
@@ -102,7 +104,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 widget.product['sizes'][i].toString(),
                               ),
                               labelStyle: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 color:
                                     selectedSize == widget.product['sizes'][i]
                                         ? Colors.white
@@ -110,7 +112,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               ),
                               backgroundColor:
                                   selectedSize == widget.product['sizes'][i]
-                                      ? darkBlue
+                                      ? CustomColors.darkBlue
                                       : null,
                             ),
                           ),
@@ -124,7 +126,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                     addToCart();
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: darkBlue,
+                    backgroundColor: CustomColors.darkBlue,
                     minimumSize: const Size.fromHeight(46),
                   ),
                   child: const Text(

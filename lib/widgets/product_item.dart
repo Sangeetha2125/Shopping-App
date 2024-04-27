@@ -35,7 +35,7 @@ class _ProductItemState extends State<ProductItem> {
             12,
           ),
           border: Border.all(width: .5),
-          color: widget.index.isEven ? null : lightBlue,
+          color: widget.index.isEven ? null : CustomColors.lightBlue,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,8 +44,8 @@ class _ProductItemState extends State<ProductItem> {
               widget.product['title'] as String,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 22,
-                color: darkBlue,
+                fontSize: 20,
+                color: CustomColors.darkBlue,
               ),
             ),
             const SizedBox(
@@ -54,7 +54,7 @@ class _ProductItemState extends State<ProductItem> {
             Text(
               "₹${widget.product['price']}",
               style: const TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
             const SizedBox(height: 8),

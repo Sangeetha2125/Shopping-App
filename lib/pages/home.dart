@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 12,
-        vertical: 6,
+        vertical: 4,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
           ChangeNotifierProvider(
             create: (context) => CategoryFilterProvider(),
             child: SizedBox(
-              height: 50,
+              height: 40,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: filters.length,
